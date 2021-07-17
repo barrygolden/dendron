@@ -32,4 +32,5 @@ new NoteCLICommand().buildCmd(buildYargs);
 new VaultCLICommand().buildCmd(buildYargs);
 new WorkspaceCLICommand().buildCmd(buildYargs);
 new SeedCLICommand().buildCmd(buildYargs);
+// eslint-disable-next-line no-unused-expressions
 buildYargs.demandCommand(1).help().argv;
