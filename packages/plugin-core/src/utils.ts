@@ -4,6 +4,7 @@ import {
   DEngineClient,
   DNodeUtils,
   DVault,
+  ERROR_STATUS,
   getStage,
   NoteAddBehavior,
   NoteProps,
@@ -645,3 +646,5 @@ export const clipboard = vscode.env.clipboard;
 export const getOpenGraphMetadata = (opts: ogs.Options) => {
   return ogs(opts);
 };
+
+
