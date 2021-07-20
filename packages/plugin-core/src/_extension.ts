@@ -35,7 +35,8 @@ import { AnalyticsUtils } from "./utils/analytics";
 import { DendronTreeView } from "./views/DendronTreeView";
 import { DendronWorkspace, getEngine, getWS } from "./workspace";
 import { WorkspaceInitFactory } from "./workspace/workspaceInitializer";
-import { execServerNode } from "./_server";
+import {ServerUtils} from "@dendronhq/api-server";
+import path from "path";
 
 const MARKDOWN_WORD_PATTERN = new RegExp("([\\w\\.\\#]+)");
 // === Main
@@ -151,7 +152,8 @@ async function startServerProcess(): Promise<{
     return { port };
   }
   const logPath = DendronWorkspace.instance().context.logPath;
-  const out = await execServerNode({
+  const out = await ServerUtils.execServerNode({
+    scriptPath: path.join(__dirname, "server.js"),
     logPath,
     nextServerUrl,
     nextStaticRoot,
